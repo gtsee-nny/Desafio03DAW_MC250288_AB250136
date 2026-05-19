@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(102, 126, 234, 0.25), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(118, 75, 162, 0.2), transparent 35%),
+    #eef2ff;
+  min-height: 100vh;
+  color: #1e293b;
+}
+
+#root {
+  width: 100%;
+}
+
+.app-container {
+  width: min(1200px, 92%);
+  margin: auto;
+  padding: 40px 0 60px;
+}
+
+.app-titulo {
+  text-align: center;
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  margin-bottom: 30px;
+  color: #0f172a;
+  letter-spacing: -1px;
+  font-weight: 800;
+}
+
+.app-busqueda {
+  position: relative;
+  width: min(550px, 100%);
+  margin: 0 auto 25px;
+}
+
+.app-input {
+  width: 100%;
+  padding: 18px 55px 18px 22px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+  font-size: 1rem;
+  color: #1e293b;
+  transition: all 0.25s ease;
+}
+
+.app-input:focus {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(99, 102, 241, 0.18);
+}
+
+.app-input::placeholder {
+  color: #64748b;
+}
+
+.app-limpiar {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: #e2e8f0;
+  color: #475569;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.app-limpiar:hover {
+  background: #cbd5e1;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.app-contador {
+  margin-bottom: 22px;
+  text-align: center;
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.app-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.app-sin-resultados {
+  text-align: center;
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 30px;
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  color: #475569;
+  font-size: 1rem;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    width: 94%;
+    padding-top: 28px;
+  }
+
+  .app-titulo {
+    font-size: 2rem;
+    margin-bottom: 22px;
+  }
+
+  .app-lista {
+    gap: 18px;
+  }
+}
