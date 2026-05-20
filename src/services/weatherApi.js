@@ -13,3 +13,4 @@ export async function getWeather(city) {
     throw new Error('No se pudo conectar con OpenWeatherMap')
   }
 }
+
