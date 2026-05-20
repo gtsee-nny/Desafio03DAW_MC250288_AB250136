@@ -49,9 +49,15 @@ function CountryDetail({ pais, onVolver }) {
           src={pais.flags?.png}
           alt={`Bandera de ${pais.name?.common ?? 'país'}`}
           className="detail-bandera"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = pais.flags?.svg;
+          }}
         />
         <div>
+          <br />
           <h2 className="detail-nombre">{pais.name?.common ?? 'Sin nombre'}</h2>
+          <br />
           <p className="detail-capital">
             🏙️ Capital: <strong>{capital ?? 'No disponible'}</strong>
           </p>
@@ -59,7 +65,9 @@ function CountryDetail({ pais, onVolver }) {
       </div>
 
       <div className="detail-clima">
+        <br />
         <h3>Clima actual en {capital ?? 'la capital'}</h3>
+        <br />
         {cargando && <LoadingSpinner mensaje="Obteniendo clima..." />}
         {error && <ErrorMessage mensaje={error} onReintentar={cargarClima} />}
         {clima && <WeatherInfo clima={clima} />}
@@ -75,6 +83,7 @@ CountryDetail.propTypes = {
     }),
     flags: PropTypes.shape({
       png: PropTypes.string,
+      svg: PropTypes.string,
     }),
     capital: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,

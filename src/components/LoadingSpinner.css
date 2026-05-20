@@ -9,15 +9,16 @@
 .spinner {
   width: 52px;
   height: 52px;
-  border: 5px solid rgba(99, 102, 241, 0.15);
-  border-top: 5px solid #6366f1;
+  border: 5px solid rgba(0, 217, 255, 0.15);
+  border-top: 5px solid #00d9ff;
   border-radius: 50%;
   animation: girar 0.8s linear infinite;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
 }
 
 .spinner-texto {
   margin-top: 18px;
-  color: #475569;
+  color: #94a3b8;
   font-weight: 600;
 }
 

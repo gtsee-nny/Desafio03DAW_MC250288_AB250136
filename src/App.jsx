@@ -47,42 +47,36 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className="app-titulo">🌍 Países del Mundo</h1>
+      <h1 className="app-titulo">Terral Horizons 🌎</h1>
 
       <div className="app-busqueda">
-        <input
-          type="text"
-          placeholder="Buscar país..."
-          value={busqueda}
-          onChange={(e) => setBusqueda(e.target.value)}
-          className="app-input"
+        <input type="text" placeholder="Buscar país..." value={busqueda} onChange={(e)=> setBusqueda(e.target.value)}
+        className="app-input"
         />
         {busqueda && (
-          <button className="app-limpiar" onClick={() => setBusqueda('')}>✕</button>
+        <button className="app-limpiar" onClick={()=> setBusqueda('')}>✕</button>
         )}
       </div>
 
-      {cargando && <LoadingSpinner mensaje="Cargando países..." />}
-      {error && <ErrorMessage mensaje={error} onReintentar={cargarPaises} />}
+      {cargando &&
+      <LoadingSpinner mensaje="Cargando países..." />}
+      {error &&
+      <ErrorMessage mensaje={error} onReintentar={cargarPaises} />}
 
       {!cargando && !error && (
-        <>
-          <p className="app-contador">
-            {paisesFiltrados.length} {paisesFiltrados.length === 1 ? 'país encontrado' : 'países encontrados'}
-          </p>
-          <div className="app-lista">
-            {paisesFiltrados.length > 0
-              ? paisesFiltrados.map(pais => (
-                  <CountryCard
-                    key={pais.name.common}
-                    pais={pais}
-                    onSelect={setPaisSeleccionado}
-                  />
-                ))
-              : <p className="app-sin-resultados">No se encontraron países con ese nombre.</p>
-            }
-          </div>
-        </>
+      <>
+        <p className="app-contador">
+          {paisesFiltrados.length} {paisesFiltrados.length === 1 ? 'país encontrado' : 'países encontrados'}
+        </p>
+        <div className="app-lista">
+          {paisesFiltrados.length > 0
+          ? paisesFiltrados.map(pais => (
+          <CountryCard key={pais.name.common} pais={pais} onSelect={setPaisSeleccionado} />
+          ))
+          : <p className="app-sin-resultados">No se encontraron países con ese nombre.</p>
+          }
+        </div>
+      </>
       )}
     </div>
   )

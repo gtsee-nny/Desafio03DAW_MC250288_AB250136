@@ -1,17 +1,18 @@
 .detail-container {
   width: min(950px, 92%);
   margin: 40px auto;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(20, 25, 40, 0.8);
+  border: 1px solid rgba(0, 217, 255, 0.2);
   backdrop-filter: blur(16px);
   border-radius: 34px;
   padding: 35px;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.1), inset 0 0 20px rgba(0, 217, 255, 0.03);
 }
 
 .detail-volver {
-  border: none;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
+  border: 1px solid rgba(0, 217, 255, 0.4);
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(118, 75, 162, 0.15));
+  color: #00d9ff;
   padding: 12px 20px;
   border-radius: 14px;
   font-size: 0.95rem;
@@ -19,11 +20,14 @@
   cursor: pointer;
   transition: all 0.25s ease;
   margin-bottom: 28px;
+  backdrop-filter: blur(8px);
 }
 
 .detail-volver:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.28);
+  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.25);
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.3), rgba(118, 75, 162, 0.2));
+  border-color: rgba(0, 217, 255, 0.6);
 }
 
 .detail-header {
@@ -32,31 +36,34 @@
   gap: 28px;
   margin-bottom: 35px;
   padding-bottom: 28px;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.15);
 }
 
 .detail-bandera {
   width: 230px;
   border-radius: 22px;
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.15), 0 12px 35px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 217, 255, 0.2);
 }
 
 .detail-nombre {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #0f172a;
+  background: linear-gradient(135deg, #00d9ff, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 12px;
   font-weight: 800;
 }
 
 .detail-capital {
   font-size: 1.1rem;
-  color: #475569;
+  color: #94a3b8;
 }
 
 .detail-clima h3 {
   margin-bottom: 22px;
   font-size: 1.4rem;
-  color: #1e293b;
+  color: #e2e8f0;
 }
 
 @media (max-width: 768px) {
