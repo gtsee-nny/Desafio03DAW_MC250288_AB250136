@@ -1,4 +1,4 @@
-const API_KEY = import.meta.env.VITE_WEATHER_API_KEY
+const API_KEY = import.meta.env.VITE_WEATHER_KEY
 const BASE_URL = 'https://api.openweathermap.org/data/2.5'
 
 // getWeather = función que pide el clima de una ciudad específica
