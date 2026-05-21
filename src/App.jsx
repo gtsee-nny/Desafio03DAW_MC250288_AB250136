@@ -146,6 +146,7 @@ function App() {
           // {busqueda} = si el campo tiene texto (no está vacío)
           // si está vacío, NO muestra el botón
           <button className="app-limpiar" onClick={() => setBusqueda('')}>
+            ✖️
           </button>
         )}
       </div>
