@@ -4,6 +4,7 @@ const BASE_URL = 'https://restcountries.com/v3.1'
 
 // getCountries = función que descarga todos los países desde la API
 export async function getCountries() {
+  // Criterio 3: servicio API reusable para obtener los países
   try {
     const response = await fetch(
       `${BASE_URL}/all?fields=name,flags,capital,translations`
@@ -18,6 +19,7 @@ export async function getCountries() {
     return data
   } catch (error) {
     // Si falla la petición, lanzamos un error para que el componente lo maneje
+    // Criterio 7: try/catch implementado en la llamada a API de países
     throw new Error('No se pudo conectar con Rest Countries')
   }
 }

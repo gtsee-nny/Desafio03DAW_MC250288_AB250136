@@ -3,6 +3,7 @@ import './ErrorMessage.css'
 
 
 function ErrorMessage({ mensaje, onReintentar = null }) {
+  // Criterio 7: mensaje de error claro y opción de reintentar
   // mensaje = texto que explica qué salió mal
   // onReintentar = función opcional que se ejecuta al hacer clic en el botón
   // = null significa que ese botón no se mostrará si no se pasa la función

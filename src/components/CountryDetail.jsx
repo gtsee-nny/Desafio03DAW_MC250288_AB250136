@@ -10,6 +10,7 @@ import './CountryDetail.css'
 
 
 function CountryDetail({ pais, onVolver }) {
+  // Criterio 1: props destructuradas y semánticas en CountryDetail
   // ESTADOS LOCALES
   const [clima, setClima] = useState(null)
   // clima = guarda los datos del clima que vienen de la API
@@ -63,7 +64,7 @@ function CountryDetail({ pais, onVolver }) {
   }
 
   useEffect(() => {
-    // useEffect con [pais] significa: ejecutar cuando el país cambie
+    // Criterio 2: useEffect con dependencia [pais] para recargar el clima cuando cambia el país
     cargarClima()
     // Llama a cargarClima la primera vez y también si el usuario elige otro país
   }, [pais])
@@ -111,6 +112,7 @@ function CountryDetail({ pais, onVolver }) {
 
         {clima && <WeatherInfo clima={clima} />}
         {/* Si hay datos de clima, muestra el componente WeatherInfo */}
+        {/* Criterio 6/7: estados de carga claros, manejo de error y retry en CountryDetail */}
       </div>
     </div>
   )

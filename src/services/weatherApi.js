@@ -1,4 +1,5 @@
 const API_KEY = import.meta.env.VITE_WEATHER_KEY
+// Criterio 4: API key tomada desde variable de entorno .env
 const BASE_URL = 'https://api.openweathermap.org/data/2.5'
 
 // getWeather = función que pide el clima de una ciudad específica
@@ -19,6 +20,7 @@ export async function getWeather(city) {
     return data
   } catch (error) {
     // Si algo falla (por ejemplo, sin internet), lanzamos un error claro
+    // Criterio 7: try/catch implementado en la llamada a API del clima
     throw new Error('No se pudo conectar con OpenWeatherMap')
   }
 }

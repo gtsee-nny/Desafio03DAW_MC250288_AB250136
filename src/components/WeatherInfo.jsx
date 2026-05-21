@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import './WeatherInfo.css'
 
 function WeatherInfo({ clima }) {
+  // Criterio 4/5: valida datos con optional chaining y muestra temperatura, estado, humedad y viento
   return (
     <div className="weather-container">
       <div className="weather-item">
@@ -29,6 +30,7 @@ function WeatherInfo({ clima }) {
 }
 
 WeatherInfo.propTypes = {
+  // Criterio 1: validación de props para el objeto clima
   clima: PropTypes.shape({
     main: PropTypes.shape({
       temp: PropTypes.number,

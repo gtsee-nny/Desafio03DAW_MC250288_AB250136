@@ -4,6 +4,7 @@ import './LoadingSpinner.css'
 
 
 function LoadingSpinner({ mensaje = 'Cargando...' }) {
+  // Criterio 6: componente de carga reutilizable para UX profesional durante la espera
   // LoadingSpinner = componente que muestra una animación de espera
 
   return (

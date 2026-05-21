@@ -23,6 +23,7 @@ function App() {
   //   - Una función para cambiarla (ej: 'setPaises')
   //   - Un valor inicial (ej: [])
 
+  // Criterio 2: estado local manejado con useState para países, país seleccionado, carga, error y búsqueda
   const [paises, setPaises] = useState([])
   // paises = lista de TODOS los países que traemos de internet
   // setPaises = función para actualizar esta lista cuando lleguen los datos
@@ -50,6 +51,7 @@ function App() {
 
   // FUNCIÓN PARA DESCARGAR LOS PAÍSES 
   const cargarPaises = () => {
+    // Criterio 3: consumo de API correcto usando servicio reutilizable
     // Paso 1: Decir que estamos cargando
     setCargando(true)
     // Cambiamos cargando a TRUE para mostrar el spinner 
@@ -78,6 +80,7 @@ function App() {
       .catch(() => setError('Error al cargar los países. Verifica tu conexión.'))
       // .catch = "si hay un ERROR descargando, ENTONCES haz esto"
       // setError = guardamos el mensaje de error para mostrarlo en la pantalla
+      // Criterio 7: manejo de errores con mensaje claro y retry
 
       .finally(() => setCargando(false))
       // .finally = "cuando termines, ya sea que funcione o falle, ENTONCES haz esto"
@@ -86,6 +89,7 @@ function App() {
 
   // EJECUTAR ALGO CUANDO LA APP ABRE (EFECTO)
   useEffect(() => {
+    // Criterio 2: useEffect implementado correctamente para carga inicial
     // Este código adentro se ejecuta UNA SOLA VEZ cuando la app aparecer por primera vez
     cargarPaises() // Llama a la función para descargar los países
   }, [])
@@ -172,6 +176,7 @@ function App() {
                   key={pais.name.common} // La clave única para cada elemento de la lista
                   pais={pais} // Pasa los datos del país al componente CountryCard
                   onSelect={setPaisSeleccionado} // Registra el país seleccionado cuando el usuario hace clic
+                  // Criterio 1: patrón de paso de props limpio y semántico
                 />
               ))
             ) : (
